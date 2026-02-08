@@ -15,6 +15,8 @@ return {
 
       -- Rust
       vim.lsp.config("rust_analyzer", {
+        cmd = { "rust-analyzer" },
+        filetypes = { "rust" },
         root_markers = { "Cargo.toml", ".git" },
         settings = {
           ["rust-analyzer"] = {
@@ -117,7 +119,7 @@ return {
         },
       })
 
-      -- mason-lspconfig: install servers + auto-enable them
+      -- mason-lspconfig: install servers
       require("mason-lspconfig").setup({
         ensure_installed = {
           "rust_analyzer",
@@ -126,9 +128,14 @@ return {
           "gopls",
           "pyright",
         },
-        -- automatic_enable = true is the default;
-        -- it calls vim.lsp.enable() for all Mason-installed servers
       })
+
+      -- Explicitly enable all servers so they auto-attach to matching buffers
+      vim.lsp.enable("rust_analyzer")
+      vim.lsp.enable("ts_ls")
+      vim.lsp.enable("vue_ls")
+      vim.lsp.enable("gopls")
+      vim.lsp.enable("pyright")
     end,
   },
 }
