@@ -22,3 +22,6 @@ require("keymaps")
 
 -- Load plugins
 require("lazy").setup("plugins")
+
+-- Set colorscheme
+vim.cmd.colorscheme("borland")
