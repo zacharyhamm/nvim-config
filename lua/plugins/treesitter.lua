@@ -16,6 +16,7 @@ return {
         "gomod",
         "gosum",
         "python",
+        "haskell",
         "lua",
         "toml",
         "markdown",

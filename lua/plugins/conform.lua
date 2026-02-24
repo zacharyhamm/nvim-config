@@ -16,6 +16,7 @@ return {
           html = { "prettier" },
           css = { "prettier" },
           json = { "prettier" },
+          haskell = { "ormolu" },
         },
         format_on_save = {
           timeout_ms = 1000,

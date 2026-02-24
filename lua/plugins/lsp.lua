@@ -119,6 +119,20 @@ return {
         },
       })
 
+      -- Haskell
+      vim.lsp.config("hls", {
+        filetypes = { "haskell", "lhaskell", "cabal" },
+        root_markers = { "hie.yaml", "stack.yaml", "cabal.project", "*.cabal", "package.yaml", ".git" },
+        settings = {
+          haskell = {
+            formattingProvider = "ormolu",
+            plugin = {
+              rename = { config = { crossModule = true } },
+            },
+          },
+        },
+      })
+
       -- mason-lspconfig: install servers
       require("mason-lspconfig").setup({
         ensure_installed = {
@@ -127,6 +141,7 @@ return {
           "vue_ls",
           "gopls",
           "pyright",
+          "hls",
         },
       })
 
@@ -136,6 +151,7 @@ return {
       vim.lsp.enable("vue_ls")
       vim.lsp.enable("gopls")
       vim.lsp.enable("pyright")
+      vim.lsp.enable("hls")
     end,
   },
 }

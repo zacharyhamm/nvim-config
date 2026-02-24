@@ -24,4 +24,4 @@ require("keymaps")
 require("lazy").setup("plugins")
 
 -- Set colorscheme
-vim.cmd.colorscheme("borland")
+vim.cmd.colorscheme("darkblue")
