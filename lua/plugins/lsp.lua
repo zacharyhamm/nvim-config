@@ -133,6 +133,15 @@ return {
         },
       })
 
+      -- Ruby
+      vim.lsp.config("ruby_lsp", {
+        filetypes = { "ruby", "eruby" },
+        root_markers = { "Gemfile", ".git" },
+        init_options = {
+          formatter = "auto",
+        },
+      })
+
       -- mason-lspconfig: install servers
       require("mason-lspconfig").setup({
         ensure_installed = {
@@ -142,6 +151,7 @@ return {
           "gopls",
           "pyright",
           "hls",
+          "ruby_lsp",
         },
       })
 
@@ -152,6 +162,7 @@ return {
       vim.lsp.enable("gopls")
       vim.lsp.enable("pyright")
       vim.lsp.enable("hls")
+      vim.lsp.enable("ruby_lsp")
     end,
   },
 }

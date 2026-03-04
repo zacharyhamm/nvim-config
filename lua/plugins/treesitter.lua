@@ -17,6 +17,7 @@ return {
         "gosum",
         "python",
         "haskell",
+        "ruby",
         "lua",
         "toml",
         "markdown",

@@ -17,6 +17,7 @@ return {
           css = { "prettier" },
           json = { "prettier" },
           haskell = { "ormolu" },
+          ruby = { "rubocop" },
         },
         format_on_save = {
           timeout_ms = 1000,
